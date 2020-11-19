@@ -21,7 +21,7 @@ const coin = {
   },
   toHTML() {
     const image = document.createElement("img");
-    image.src = (this.state === 0 ? './assets/images/heads.jpg' : './assets/images/tails.jpg');
+    image.src = this.state === 0 ? './assets/images/heads.jpg' : './assets/images/tails.jpg';
     image.classList.add("image");
     return image;
   },
@@ -40,9 +40,22 @@ flipButton.addEventListener("click", function () {
 
 // FUNCTION DECLARATIONS
 
-
 // Here I merged the adding text and adding images functions into one.
-// 
+// I like the idea of using the flip functions as callback functions inside
+// of a click event, so I choose to go that way, which I know was not 
+// exactly what was asked for in the assignment. Therefore, here is a 
+// 'display20Flips' function that simply adds text to the page. 
+
+// const display20Flips = function() {
+//   for (let i = 0; i < 20; i++) {
+//     coin.flip();
+//     const flipDiv = document.createElement("div");
+//     flipDiv.append(coin.toString());
+//     flipDiv.classList.add("flipDiv");
+//     container.append(flipDiv);
+//   }
+// }
+
 const display20Flips = function() {
   display20Images();
 }
